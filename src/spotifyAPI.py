@@ -2,6 +2,8 @@ import configS
 from pprint import pprint
 import requests
 import time
+from TwitterAPI import TwitterAPI
+import configT
 
 
 
@@ -29,7 +31,10 @@ def get_current_track(access_token):
     }
     return current_track_info
 
-
+def tweet(api, info):
+    formatted = 'Currently listening to:\n{}\n{}\n{}'.format(info['artists'], info['name'], info['link'])
+    r = api.request('statuses/update', {'status': formatted})
+    print(r.status_code)
 
 
 def main():
@@ -38,12 +43,17 @@ def main():
     currName = current_track_info['name']
     pprint(current_track_info, indent=4)
 
+    api = TwitterAPI(configT.consumerKey, configT.consumerSecret, configT.accessToken, configT.accessSecret)
+    tweet(api, current_track_info)
+
+
     # then looping and checking for a new song name being played
     while True:
         current_track_info = get_current_track(SPOTIFY_ACCESS_TOKEN)
         if current_track_info['name'] != currName:
             pprint(current_track_info, indent=4)
             currName = current_track_info['name']
+            tweet(api, current_track_info)
         
 
 
