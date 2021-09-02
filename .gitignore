@@ -130,5 +130,5 @@ dmypy.json
 
 # config files
 /src/configAM.py
-/configT.py
-/configS.py
+/src/configT.py
+/src/configS.py
