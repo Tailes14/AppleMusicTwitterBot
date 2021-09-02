@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 
 # config files
-/src/configAM.py
-/src/configT.py
+/configAM.py
+/configT.py
 /configS.py
