@@ -128,5 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# config file
-/src/config.py
+# config files
+/src/AppleMusicApi/configAM.py
+/src/TwitterApi/configT.py
