@@ -129,6 +129,6 @@ dmypy.json
 .pyre/
 
 # config files
-/src/AppleMusicApi/configAM.py
-/src/TwitterApi/configT.py
-/src/SpotifyApi/configS.py
+/src/configAM.py
+/src/configT.py
+/src/configS.py
