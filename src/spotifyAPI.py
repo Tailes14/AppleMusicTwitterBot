@@ -5,6 +5,8 @@ import time
 from TwitterAPI import TwitterAPI
 import configT
 
+# youtube video followed for spotify 
+# https://www.youtube.com/watch?v=yKz38ThJWqE
 
 SPOTIFY_ACCESS_TOKEN = configS.OAuthToken
 GET_CURRENT_TRACK_URL = 'https://api.spotify.com/v1/me/player/currently-playing'
